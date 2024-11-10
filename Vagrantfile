@@ -7,7 +7,8 @@ Vagrant.configure("2") do |config|
       vb.memory = "512"
       vb.cpus = 1
     end
-    web1.vm.synced_folder "./web1", "/var/www/html"
+    # Ruta absoluta para Windows
+    web1.vm.synced_folder "C:/Users/adria/Automatizacion/web1", "/var/www/html"
     web1.vm.provision "shell", inline: <<-SHELL
       sudo apt-get update
       sudo apt-get install -y apache2
@@ -23,7 +24,8 @@ Vagrant.configure("2") do |config|
       vb.memory = "512"
       vb.cpus = 1
     end
-    web2.vm.synced_folder "./web2", "/var/www/html"
+    # Ruta absoluta para Windows
+    web2.vm.synced_folder "C:/Users/adria/Automatizacion/web2", "/var/www/html"
     web2.vm.provision "shell", inline: <<-SHELL
       sudo apt-get update
       sudo apt-get install -y apache2
